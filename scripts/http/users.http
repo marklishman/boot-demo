@@ -1,0 +1,61 @@
+
+# -----------------------------------------------------------------------------
+# users
+
+GET http://localhost:8080/users
+Accept: application/json
+
+
+###
+GET http://localhost:8080/users/6
+Accept: application/json
+
+###
+
+
+# -----------------------------------------------------------------------------
+# POST
+
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "firstName": "Mick",
+  "lastName": "Wishman",
+  "userName": "mickywise",
+  "email": "micky.wiseman@email.com",
+  "phoneNumber": "024---618-1244",
+  "age": 20,
+  "website": "wiseman.com"
+}
+
+###
+
+
+
+# -----------------------------------------------------------------------------
+# PUT
+
+PUT http://localhost:8080/users/{id}
+Content-Type: application/json
+
+{
+  "firstName": "Micky",
+  "lastName": "Wiseman",
+  "userName": "Micky.Wise",
+  "email": "micky.wiseman@email.com",
+  "phoneNumber": "024-618-1244",
+  "age": 23,
+  "website": "wiseman.net"
+}
+
+###
+
+
+
+# -----------------------------------------------------------------------------
+# DELETE
+
+DELETE http://localhost:8080/users/{id}
+
+###
