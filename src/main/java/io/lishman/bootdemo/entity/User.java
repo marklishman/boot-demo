@@ -59,6 +59,17 @@ public class User {
         this.website = website;
     }
 
+    public static User newInstance(final Long id,
+                                   final String firstName,
+                                   final String lastName,
+                                   final String userName,
+                                   final String email,
+                                   final String phoneNumber,
+                                   final Integer age,
+                                   final String website) {
+        return new User(id, firstName, lastName, userName, email, phoneNumber, age, website);
+    }
+
     public User cloneWithNewId(final Long id) {
         return new User(id, firstName, lastName, userName, email, phoneNumber, age, website);
     }
