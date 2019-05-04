@@ -49,7 +49,7 @@ class UserServiceTest {
 
         @Test
         @DisplayName("Given there is one user, then a list with one is returned")
-        void singleUserInList(@Autowired final UserRepository userRepository) {
+        void singleUserInList() {
             final List<User> userEntities = Collections.singletonList(UserFixture.leanneGraham());
             given(userRepository.findAll()).willReturn(userEntities);
 
@@ -61,7 +61,7 @@ class UserServiceTest {
 
         @Test
         @DisplayName("Given there are several users, then a list with all of them is returned")
-        void usersInList(@Autowired final UserRepository userRepository) {
+        void usersInList() {
             final List<User> userEntities = List.of(UserFixture.leanneGraham(), UserFixture.nicholasRunolfsdottir());
             given(userRepository.findAll()).willReturn(userEntities);
 
