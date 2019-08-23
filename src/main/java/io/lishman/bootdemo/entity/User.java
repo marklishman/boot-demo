@@ -1,11 +1,14 @@
 package io.lishman.bootdemo.entity;
 
+import org.hibernate.validator.constraints.Range;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 
 @Entity
@@ -18,12 +21,14 @@ public class User {
     private Long id;
 
     @Column(name = "usr_first_name")
+    @NotBlank(message = "first name must not be blank")
     private String firstName;
 
     @Column(name = "usr_last_name")
     private String lastName;
 
     @Column(name = "usr_user_name")
+    @NotBlank(message = "{user.name.not.blank}")
     private String userName;
 
     @Column(name = "usr_email")
@@ -33,6 +38,7 @@ public class User {
     private String phoneNumber;
 
     @Column(name = "usr_age")
+    @Range(min = 1, max = 120, message = "age must be between 1 and 120")
     private Integer age;
 
     @Column(name = "usr_website")
